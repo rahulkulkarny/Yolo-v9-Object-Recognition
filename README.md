@@ -115,10 +115,6 @@ python -m torch.distributed.launch --nproc_per_node 8 --master_port 9527 train_d
 ```
 
 
-## Re-parameterization
-
-See [reparameterization.ipynb](https://github.com/rahulkulkarny/yolov9/blob/main/tools/reparameterization.ipynb).
-
 
 ## Inference
 
@@ -140,42 +136,9 @@ python detect.py --source './data/images/horses.jpg' --img 640 --device 0 --weig
 ```
 
 
-## Citation
-
-```
-@article{wang2024yolov9,
-  title={{YOLOv9}: Learning What You Want to Learn Using Programmable Gradient Information},
-  author={Wang, Chien-Yao  and Liao, Hong-Yuan Mark},
-  booktitle={arXiv preprint arXiv:2402.13616},
-  year={2024}
-}
-```
-
-```
-@article{chang2023yolor,
-  title={{YOLOR}-Based Multi-Task Learning},
-  author={Chang, Hung-Shuo and Wang, Chien-Yao and Wang, Richard Robert and Chou, Gene and Liao, Hong-Yuan Mark},
-  journal={arXiv preprint arXiv:2309.16921},
-  year={2023}
-}
-```
-
-
-## Teaser
-
-Parts of code of [YOLOR-Based Multi-Task Learning](https://arxiv.org/abs/2309.16921) are released in the repository.
-
-<div align="center">
-    <a href="./">
-        <img src="./figure/multitask.png" width="99%"/>
-    </a>
-</div>
-
 #### Object Detection
 
-[`gelan-c-det.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-c-det.pt)
-
-`object detection`
+`object recognition`
 
 ``` shell
 # coco/labels/{split}/*.txt
@@ -185,12 +148,12 @@ python train.py --workers 8 --device 0 --batch 32 --data data/coco.yaml --img 64
 
 | Model | Test Size | Param. | FLOPs | AP<sup>box</sup> |
 | :-- | :-: | :-: | :-: | :-: |
-| [**GELAN-C-DET**](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-c-det.pt) | 640 | 25.3M | 102.1G |**52.3%** |
+| [**GELAN-C-DET**](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/gelan-c-det.pt) | 640 | 25.3M | 102.1G |**52.3%** |
 | [**YOLOv9-C-DET**]() | 640 | 25.3M | 102.1G | **53.0%** |
 
 #### Instance Segmentation
 
-[`gelan-c-seg.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-c-seg.pt)
+[`gelan-c-seg.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/gelan-c-seg.pt)
 
 `object detection` `instance segmentation`
 
@@ -202,12 +165,12 @@ python segment/train.py --workers 8 --device 0 --batch 32  --data coco.yaml --im
 
 | Model | Test Size | Param. | FLOPs | AP<sup>box</sup> | AP<sup>mask</sup>  |
 | :-- | :-: | :-: | :-: | :-: | :-: |
-| [**GELAN-C-SEG**](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-c-seg.pt) | 640 | 27.4M | 144.6G | **52.3%** | **42.4%** |
+| [**GELAN-C-SEG**](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/gelan-c-seg.pt) | 640 | 27.4M | 144.6G | **52.3%** | **42.4%** |
 | [**YOLOv9-C-SEG**]() | 640 | 27.4M | 145.5G | **53.3%** | **43.5%** |
 
 #### Panoptic Segmentation
 
-[`gelan-c-pan.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-c-pan.pt)
+[`gelan-c-pan.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/gelan-c-pan.pt)
 
 `object detection` `instance segmentation` `semantic segmentation` `stuff segmentation` `panoptic segmentation`
 
@@ -221,7 +184,7 @@ python panoptic/train.py --workers 8 --device 0 --batch 32  --data coco.yaml --i
 
 | Model | Test Size | Param. | FLOPs | AP<sup>box</sup> | AP<sup>mask</sup>  | mIoU<sub>164k/10k</sub><sup>semantic</sup> | mIoU<sup>stuff</sup> | PQ<sup>panoptic</sup> |
 | :-- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| [**GELAN-C-PAN**](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-c-pan.pt) | 640 | 27.6M | 146.7G | **52.6%** | **42.5%** | **39.0%/48.3%** | **52.7%** | **39.4%** |
+| [**GELAN-C-PAN**](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/gelan-c-pan.pt) | 640 | 27.6M | 146.7G | **52.6%** | **42.5%** | **39.0%/48.3%** | **52.7%** | **39.4%** |
 | [**YOLOv9-C-PAN**]() | 640 | 28.8M | 187.0G | **52.7%** | **43.0%** | **39.8%/-** | **52.2%** | **40.5%** |
 
 #### Image Captioning (not yet released)
@@ -247,9 +210,5 @@ python caption/train.py --workers 8 --device 0 --batch 32  --data coco.yaml --im
 <!--| [**YOLOR-MT**]() | 640 | 79.3M | - | **51.0%** | **41.7%** | **-/49.6%** | **55.9%** | **40.5%** | **35.7** | **112.7** |-->
 
 
-
-* [https://github.com/DingXiaoH/RepVGG](https://github.com/DingXiaoH/RepVGG)
-* [https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5)
-* [https://github.com/meituan/YOLOv6](https://github.com/meituan/YOLOv6)
 
 </details>
