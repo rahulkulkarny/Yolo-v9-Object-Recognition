@@ -1,6 +1,5 @@
-# YOLOv9
-
-Implementation of paper - [YOLOv9: Learning What You Want to Learn Using Programmable Gradient Information](https://arxiv.org/abs/2402.13616)
+# Project Name: Computer Vision based Object Detection & Classification
+This project focuses on real-time object detection and classification using deep learning models trained on the COCO (Common Objects in Context) dataset. By leveraging state-of-the-art architectures such as YOLO (You Only Look Once), Faster R-CNN, and SSD (Single Shot MultiBox Detector), the system identifies and classifies multiple objects in images and videos with high accuracy. The project also incorporates bounding box annotations and confidence scores to enhance interpretability. Potential applications include autonomous driving, smart surveillance, and augmented reality.
 
 
 <div align="center">
@@ -51,9 +50,9 @@ cd /yolov9
 
 ## Evaluation
 
-[`yolov9-s-converted.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-s-converted.pt) [`yolov9-m-converted.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-m-converted.pt) [`yolov9-c-converted.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-c-converted.pt) [`yolov9-e-converted.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-e-converted.pt) 
-[`yolov9-s.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-s.pt) [`yolov9-m.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-m.pt) [`yolov9-c.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-c.pt) [`yolov9-e.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-e.pt) 
-[`gelan-s.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-s.pt) [`gelan-m.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-m.pt) [`gelan-c.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-c.pt) [`gelan-e.pt`](https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-e.pt)
+[`yolov9-s-converted.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/yolov9-s-converted.pt) [`yolov9-m-converted.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/yolov9-m-converted.pt) [`yolov9-c-converted.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/yolov9-c-converted.pt) [`yolov9-e-converted.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/yolov9-e-converted.pt) 
+[`yolov9-s.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/yolov9-s.pt) [`yolov9-m.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/yolov9-m.pt) [`yolov9-c.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/yolov9-c.pt) [`yolov9-e.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/yolov9-e.pt) 
+[`gelan-s.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/gelan-s.pt) [`gelan-m.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/gelan-m.pt) [`gelan-c.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/gelan-c.pt) [`gelan-e.pt`](https://github.com/rahulkulkarny/yolov9/releases/download/v0.1/gelan-e.pt)
 
 ``` shell
 # evaluate converted yolov9 models
@@ -92,7 +91,7 @@ Data preparation
 bash scripts/get_coco.sh
 ```
 
-* Download MS COCO dataset images ([train](http://images.cocodataset.org/zips/train2017.zip), [val](http://images.cocodataset.org/zips/val2017.zip), [test](http://images.cocodataset.org/zips/test2017.zip)) and [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-segments.zip). If you have previously used a different version of YOLO, we strongly recommend that you delete `train2017.cache` and `val2017.cache` files, and redownload [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-segments.zip) 
+* Download MS COCO dataset images ([train](http://images.cocodataset.org/zips/train2017.zip), [val](http://images.cocodataset.org/zips/val2017.zip), [test](http://images.cocodataset.org/zips/test2017.zip)) and [labels](https://github.com/rahulkulkarny/yolov7/releases/download/v0.1/coco2017labels-segments.zip). If you have previously used a different version of YOLO, it is strongly recommended that you delete `train2017.cache` and `val2017.cache` files, and redownload [labels](https://github.com/rahulkulkarny/yolov7/releases/download/v0.1/coco2017labels-segments.zip) 
 
 Single GPU training
 
